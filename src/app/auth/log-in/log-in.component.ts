@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Form} from "@angular/forms";
 
 @Component({
   selector: 'app-log-in',
@@ -11,5 +12,7 @@ export class LogInComponent implements OnInit {
 
   ngOnInit() {
   }
+  onSubmit(form: Form){
 
+  }
 }

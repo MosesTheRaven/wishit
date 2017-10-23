@@ -4,12 +4,18 @@ import {MyWishlistsComponent} from "./my-wishlists/my-wishlists.component";
 import {FriendsComponent} from "./friends/friends.component";
 import {UserSpaceComponent} from "./user-space/user-space.component";
 import {NgModule} from "@angular/core";
+import {LogInComponent} from "./auth/log-in/log-in.component";
+import {SingInComponent} from "./auth/sing-in/sing-in.component";
+import {RouteGuard} from "./auth/route-guard";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'my-wishlists', component: MyWishlistsComponent},
-  {path: 'friends', component: FriendsComponent},
-  {path: 'user-space', component: UserSpaceComponent},
+  {path: 'my-wishlists', component: MyWishlistsComponent, canActivate: [RouteGuard]},
+  {path: 'friends', component: FriendsComponent, canActivate: [RouteGuard]},
+  {path: 'user-space', component: UserSpaceComponent, canActivate: [RouteGuard]},
+  {path: 'login', component: LogInComponent},
+  {path: 'sign-in', component: SingInComponent},
+
 
 ];
 

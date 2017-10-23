@@ -4,14 +4,14 @@
       <a class="navbar-brand" href="#">WishIt</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"  routerLink="/">Home</a></li>
-      <li><a routerLinkActive="active" routerLink="/user-space">User Space</a></li>
-      <li><a routerLinkActive="active" routerLink="/my-wishlists">My Wishlists</a></li>
-      <li><a routerLinkActive="active" routerLink="/friends">Friends</a></li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"  ><a routerLink="/">Home</a></li>
+      <li routerLinkActive="active" ><a routerLink="/user-space">User Space</a></li>
+      <li routerLinkActive="active"><a  routerLink="/my-wishlists">My Wishlists</a></li>
+      <li routerLinkActive="active" ><a routerLink="/friends">Friends</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Sing in</a></li>
-      <li><a href="#">Login</a></li>
+      <li routerLinkActive="active"><a  routerLink="/sign-in">Sing in</a></li>
+      <li routerLinkActive="active" ><a routerLink="/login">Login</a></li>
       <li><a href="#">Logout</a></li>
     </ul>
   </div>
