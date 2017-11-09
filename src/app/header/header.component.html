@@ -10,9 +10,9 @@
       <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/friends">Friends</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active" ><a  routerLink="/sign-in">Sign Up</a></li>
-      <li routerLinkActive="active" ><a routerLink="/login">Login</a></li>
-      <li><a href="#" *ngIf="isLoggedIn">Logout</a></li>
+      <li routerLinkActive="active" *ngIf="!isLoggedIn"><a  routerLink="/sign-in">Sign Up</a></li>
+      <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+      <li><a href="#" *ngIf="isLoggedIn" (click)="logOut()">Logout</a></li>
     </ul>
   </div>
 </nav>

@@ -21,6 +21,7 @@ export class SingInComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
 
+    
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(userData => {
         userData.sendEmailVerification();
@@ -30,11 +31,9 @@ export class SingInComponent implements OnInit {
         this.notifier.display('success', message);
 
 
-        return firebase.database().ref('users/' + userData.uid).set({
+        return firebase.database().ref('users/' + nickname).set({
           email: email,
-          uid: userData.uid,
           registrationDate: new Date().toString(),
-          nickname: nickname
         })
           .then(()=>{
             //to be resolved - doesnt break the building process

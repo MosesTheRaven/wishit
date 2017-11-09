@@ -16,27 +16,23 @@ export class LogInComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(form: NgForm){
-    const email = form.value.email;
+    const nickname = form.value.nickname;
     const password = form.value.password;
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(userData => {
-        if(userData.emailVerified){
-          return this.myFire.getUserFromDatabase(userData.uid);
-        } else {
-          const message = 'Your email is not yet verified';
-          this.notifier.display('error', message);
 
-          firebase.auth().signOut();
-        }
+    this.myFire.getUserFromDatabase(nickname)
+      .then(userData => {
+        var userDataVal = userData.val();
+        firebase.auth().signInWithEmailAndPassword(userDataVal.email, password)
+          .then(loginUserData => {
+            if(loginUserData.emailVerified) return userDataVal;
+            else{
+              const message = 'Your email is not yet verified';
+              this.notifier.display('error', message);
+              firebase.auth().signOut();
+            }
+          })
       })
-      .then(userDataFromDatabase => {
-        if(userDataFromDatabase) {
-          
-        }
-      })
-      .catch(err => {
-        this.notifier.display('error', err.message);
-      });
+
   }
 }

@@ -21,5 +21,8 @@ export class HeaderComponent implements OnInit {
       }
     })
   }
+  logOut(){
+    firebase.auth().signOut();
+  }
 
 }
