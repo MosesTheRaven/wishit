@@ -23,15 +23,24 @@ export class LogInComponent implements OnInit {
     this.myFire.getUserFromDatabase(nickname)
       .then(userData => {
         var userDataVal = userData.val();
-        firebase.auth().signInWithEmailAndPassword(userDataVal.email, password)
-          .then(loginUserData => {
-            if(loginUserData.emailVerified) return userDataVal;
-            else{
-              const message = 'Your email is not yet verified';
-              this.notifier.display('error', message);
-              firebase.auth().signOut();
-            }
-          })
+        if(userDataVal == null){
+          var message = "There is no user registered under this nickname!";
+          this.notifier.display('error', message);
+        }
+        else {
+          firebase.auth().signInWithEmailAndPassword(userDataVal.email, password)
+            .then(loginUserData => {
+              if(loginUserData.emailVerified) return userDataVal;
+              else{
+                const message = 'Your email is not yet verified!';
+                this.notifier.display('error', message);
+                firebase.auth().signOut();
+              }
+            })
+            .catch(error => {
+              this.notifier.display('error', error.message)
+            })
+        }
       })
 
   }
