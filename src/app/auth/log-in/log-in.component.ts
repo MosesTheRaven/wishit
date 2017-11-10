@@ -3,6 +3,8 @@ import {NgForm} from "@angular/forms";
 import {NotificationService} from "../../shared/notification.service";
 import * as firebase from "firebase";
 import {MyFireService} from "../../shared/myfire.service";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-log-in',
@@ -11,7 +13,7 @@ import {MyFireService} from "../../shared/myfire.service";
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private notifier: NotificationService, private myFire: MyFireService) { }
+  constructor(private notifier: NotificationService, private myFire: MyFireService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,7 +32,10 @@ export class LogInComponent implements OnInit {
         else {
           firebase.auth().signInWithEmailAndPassword(userDataVal.email, password)
             .then(loginUserData => {
-              if(loginUserData.emailVerified) return userDataVal;
+              if(loginUserData.emailVerified) {
+                this.router.navigate(['', ]);
+                return userDataVal;
+              }
               else{
                 const message = 'Your email is not yet verified!';
                 this.notifier.display('error', message);
