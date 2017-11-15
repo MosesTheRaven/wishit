@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import {UserService} from "../shared/user.service";
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,21 @@ import * as firebase from 'firebase';
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
+  currentNickname: string = "currentNickname";
 
-  constructor() { }
+  constructor(private userService : UserService) { }
 
   ngOnInit() {
+
+    this.userService.statusChange.subscribe( userData =>{
+      if(userData){
+        this.currentNickname = userData.nickname;
+      }
+      else{
+        this.currentNickname = "";
+      }
+    })
+
     firebase.auth().onAuthStateChanged( userData =>{
       if(userData && userData.emailVerified){
         this.isLoggedIn = true;

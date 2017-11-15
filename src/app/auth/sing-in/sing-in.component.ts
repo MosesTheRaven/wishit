@@ -36,8 +36,10 @@ export class SingInComponent implements OnInit {
 
 
               return firebase.database().ref('users/' + nickname).set({
+                nickname: nickname,
                 email: email,
-                registrationDate: new Date().toString(),
+                registrationDate: new Date().toString()
+
               })
                 .then(()=>{
                   firebase.auth().signOut();
