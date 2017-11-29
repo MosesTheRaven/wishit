@@ -2,9 +2,9 @@ import * as firebase from 'firebase';
 
 export class MyFireService {
 
-  getUserFromDatabase(nickname) {
+  getUserFromDatabase(uid) {
 
-    const ref = firebase.database().ref('users/' + nickname);
+    const ref = firebase.database().ref('users/' + uid);
     return ref.once('value');
   }
 }

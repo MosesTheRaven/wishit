@@ -11,6 +11,10 @@ export class UserService{
     localStorage.setItem('user', JSON.stringify(userFromDatabase));
     this.statusChange.emit(userFromDatabase);
   }
+  getProfile(){
+    return JSON.parse(localStorage.getItem("user"));
+
+  }
   destroy(){
     localStorage.removeItem('user');
     this.statusChange.emit(null);

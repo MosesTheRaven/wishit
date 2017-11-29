@@ -13,6 +13,16 @@
 <li routerLinkActive="active" *ngIf="!isLoggedIn"><a  routerLink="/sign-in">Sign Up</a></li>
       <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
       <li><a href="#" *ngIf="isLoggedIn" >{{currentNickname}}</a></li>
+
+      <li class="dropdown" *ngIf="isLoggedIn">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript: void(0)"><span class="user-name-display">{{nickname}}</span>
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)"><span class="user-title">Email: </span><span class="user-data">{{email}}</span></a></li>
+          <li><a href="javascript:void(0)"><span class="user-title">Uid: </span><span class="user-data">{{uid}}</span></a></li>
+        </ul>
+      </li>
+
       <li><a href="#" *ngIf="isLoggedIn" (click)="logOut()">Logout</a></li>
     </ul>
   </div>

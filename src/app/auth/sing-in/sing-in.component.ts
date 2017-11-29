@@ -22,41 +22,23 @@ export class SingInComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
 
-    this.myFire.getUserFromDatabase(nickname)
-      .then(alreadyExistingUserData => {
-        var alreadyExistingUserDataVal = alreadyExistingUserData.val();
-        if(alreadyExistingUserDataVal == null){
-          firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(userData => {
-              userData.sendEmailVerification();
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(function (userData) {
+        userData.sendEmailVerification();
 
+        return firebase.database().ref('users/' + userData.uid).set({
+          email: email,
+          uid: userData.uid,
+          registrationDate: new Date().toString(),
+          nickname: nickname
+        }).then(() => {
+          this.notifier.display("succ", "Verification email was sent to your email address.");
+          firebase.auth().signOut();
+        })
 
-              const message = 'A verification e-mail has been sent to your e-mail address. Verify your account.';
-              this.notifier.display('success', message);
-
-
-              return firebase.database().ref('users/' + nickname).set({
-                nickname: nickname,
-                email: email,
-                registrationDate: new Date().toString()
-
-              })
-                .then(()=>{
-                  firebase.auth().signOut();
-                });
-            })
-            .catch(error => {
-              this.notifier.display('error', error.message);
-            });
-        }
-        else {
-          var message = "Username is already taken";
-          this.notifier.display('error', message);
-        }
-
-      })
-
-
+      }).catch(function (error) {
+      console.log(error);
+    });
   }
 
 }

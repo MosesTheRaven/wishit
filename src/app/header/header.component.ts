@@ -9,24 +9,23 @@ import {UserService} from "../shared/user.service";
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
-  currentNickname: string = "currentNickname";
+  nickname: string = "";
+  uid: string = "";
+  email: string = "";
+
 
   constructor(private userService : UserService) { }
 
   ngOnInit() {
 
-    this.userService.statusChange.subscribe( userData =>{
-      if(userData){
-        this.currentNickname = userData.nickname;
-      }
-      else{
-        this.currentNickname = "";
-      }
-    })
-
     firebase.auth().onAuthStateChanged( userData =>{
       if(userData && userData.emailVerified){
         this.isLoggedIn = true;
+        console.log(this.userService.getProfile().nickname);
+        this.nickname = this.userService.getProfile().nickname;
+        this.email = this.userService.getProfile().email;
+        this.uid = this.userService.getProfile().uid;
+
       }
       else{
         this.isLoggedIn = false;
@@ -35,6 +34,7 @@ export class HeaderComponent implements OnInit {
   }
   logOut(){
     firebase.auth().signOut();
+    this.userService.destroy();
   }
 
 }
