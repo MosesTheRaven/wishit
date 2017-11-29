@@ -16,6 +16,7 @@ import { NotificationComponent } from './notification/notification.component';
 import {NotificationService} from "./shared/notification.service";
 import {MyFireService} from "./shared/myfire.service";
 import {UserService} from "./shared/user.service";
+import {UserSettingsComponent} from "./user-settings/user-settings.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {UserService} from "./shared/user.service";
     SingInComponent,
     LogInComponent,
     HomeComponent,
-    NotificationComponent
+    NotificationComponent,
+    UserSettingsComponent
   ],
   imports: [
     BrowserModule,
