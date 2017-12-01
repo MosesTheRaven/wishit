@@ -23,7 +23,7 @@ export class SingInComponent implements OnInit {
     const password = form.value.password;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(function (userData) {
+      .then((userData) => {
         userData.sendEmailVerification();
 
         return firebase.database().ref('users/' + userData.uid).set({
@@ -31,13 +31,13 @@ export class SingInComponent implements OnInit {
           uid: userData.uid,
           registrationDate: new Date().toString(),
           nickname: nickname
-        }).then(() => {
-          this.notifier.display("succ", "Verification email was sent to your email address.");
+        })
+          .then(() => {
+          this.notifier.display("success", "Verification email was sent to your email address.");
           firebase.auth().signOut();
         })
-
-      }).catch(function (error) {
-      console.log(error);
+      }).catch((error) => {
+      this.notifier.display("error", error.message);
     });
   }
 

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from "@angular/forms";
+import * as firebase from "firebase";
+import {NotificationService} from "../shared/notification.service";
 
 @Component({
   selector: 'app-user-settings',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSettingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private notifier: NotificationService) { }
 
   ngOnInit() {
   }
+
+
+
 
 }

@@ -8,6 +8,9 @@ import {LogInComponent} from "./auth/log-in/log-in.component";
 import {SingInComponent} from "./auth/sing-in/sing-in.component";
 import {RouteGuard} from "./auth/route-guard";
 import {UserSettingsComponent} from "./user-settings/user-settings.component";
+import {SettingsUpdatePasswordComponent} from "./settings-update-password/settings-update-password.component";
+import {SettingsUpdateEmailComponent} from "./settings-update-email/settings-update-email.component";
+import {SettingsUpdateNicknameComponent} from "./settings-update-nickname/settings-update-nickname.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +20,9 @@ const appRoutes: Routes = [
   {path: 'login', component: LogInComponent},
   {path: 'sign-in', component: SingInComponent},
   {path: 'user-settings', component: UserSettingsComponent},
-
+  {path: 'settings-update-password', component: SettingsUpdatePasswordComponent},
+  {path: 'settings-update-email', component: SettingsUpdateEmailComponent},
+  {path: 'settings-update-nickname', component: SettingsUpdateNicknameComponent},
 
 ];
 

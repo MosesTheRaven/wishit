@@ -40,6 +40,7 @@ export class LogInComponent implements OnInit {
         if (userDataFromDatabase) {
           this.notifier.display("success", "Successfully logged in.");
           this.userService.set(userDataFromDatabase);
+
           this.router.navigate(['', ]);
         }
       })

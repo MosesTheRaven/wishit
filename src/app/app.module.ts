@@ -17,6 +17,9 @@ import {NotificationService} from "./shared/notification.service";
 import {MyFireService} from "./shared/myfire.service";
 import {UserService} from "./shared/user.service";
 import {UserSettingsComponent} from "./user-settings/user-settings.component";
+import { SettingsUpdatePasswordComponent } from './settings-update-password/settings-update-password.component';
+import { SettingsUpdateEmailComponent } from './settings-update-email/settings-update-email.component';
+import { SettingsUpdateNicknameComponent } from './settings-update-nickname/settings-update-nickname.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import {UserSettingsComponent} from "./user-settings/user-settings.component";
     LogInComponent,
     HomeComponent,
     NotificationComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    SettingsUpdatePasswordComponent,
+    SettingsUpdateEmailComponent,
+    SettingsUpdateNicknameComponent
   ],
   imports: [
     BrowserModule,
