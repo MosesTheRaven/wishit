@@ -20,7 +20,10 @@ export class HeaderComponent implements OnInit, OnDestroy{
 
 
   constructor(private userService : UserService, private myFireService: MyFireService) {
-    this.subscription = this.myFireService.getMessage().subscribe(message => { this.update(message); });
+    this.subscription = this.myFireService.getMessage().subscribe(message => {
+      this.update(message);
+      this.userService.set(message);
+    });
 
   }
 

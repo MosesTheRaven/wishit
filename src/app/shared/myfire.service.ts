@@ -25,7 +25,7 @@ export class MyFireService {
 
   }
 
-   updateUserNickname(uid, nickname) {
+   updateUserNickname(uid, nickname, notifier) {
     firebase.database().ref('users/' + uid).update({
       nickname: nickname,
     })
@@ -34,6 +34,12 @@ export class MyFireService {
            .then((userDataFromDatabase) => {
              this.subject.next(userDataFromDatabase.val());
            })
+      })
+      .then(() => {
+        notifier.display("success", "Nickname successfully changed");
+      })
+      .catch((error) => {
+        notifier.display("error", error.message);
       });
   }
 }
