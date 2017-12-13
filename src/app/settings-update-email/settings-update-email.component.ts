@@ -38,6 +38,7 @@ export class SettingsUpdateEmailComponent implements OnInit {
           .then((userDataFromDatabase) =>{
             this.userService.destroy();
             this.userService.set(userDataFromDatabase);
+            //tu by sa malo oznamit hlavicke, ze sa
 
 
           })

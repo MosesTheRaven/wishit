@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 import {UserService} from "../shared/user.service";
 import {MyFireService} from "../shared/myfire.service";
 import {Subscription} from "rxjs";
+import {LogInComponent} from "../auth/log-in/log-in.component";
 
 @Component({
   selector: 'app-header',
@@ -16,36 +17,61 @@ export class HeaderComponent implements OnInit, OnDestroy{
   nickname: string = "";
   uid: string = "";
   email: string = "";
-  subscription: Subscription;
+  userDataUpdateSubscription: Subscription;
+  loginSubscription: Subscription;
 
 
-  constructor(private userService : UserService, private myFireService: MyFireService) {
-    this.subscription = this.myFireService.getMessage().subscribe(message => {
+  constructor(private userService : UserService, private myFireService: MyFireService
+    //, private loginComponent : LogInComponent
+   )
+    {
+    this.userDataUpdateSubscription = this.myFireService.getMessage().subscribe(message => {
       this.update(message);
       this.userService.set(message);
     });
+    /*
+    this.loginSubscription = this.loginComponent.getMessage().subscribe(message =>{
+     this.update(message);
+     })
 
-  }
+     */
+ }
 
   ngOnInit() {
-
-    firebase.auth().onAuthStateChanged( userData =>{
-      if(userData && userData.emailVerified){
-        this.isLoggedIn = true;
-        var user = this.userService.getProfile();
+    this.userService.statusChange.subscribe( userData =>{
+      if(userData){
+        const user = userData.val();
         this.nickname = user.nickname;
         this.email = user.email;
         this.uid = user.uid;
+        this.isLoggedIn = true;
 
+      } else{
+        this.nickname = "";
+        this.email = "";
+        this.uid = "";
+      }
+    });
+
+    firebase.auth().onAuthStateChanged( userData =>{
+      if(userData && userData.emailVerified){
+        const user = this.userService.getProfile();
+        if(user){
+          this.nickname = user.nickname;
+          this.email = user.email;
+          this.uid = user.uid;
+          this.isLoggedIn = true;
+        }
       }
       else{
         this.isLoggedIn = false;
+        this.userService.destroy();
       }
     })
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.userDataUpdateSubscription.unsubscribe();
   }
 
   logOut(){

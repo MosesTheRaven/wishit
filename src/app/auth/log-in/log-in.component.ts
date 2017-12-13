@@ -28,6 +28,8 @@ export class LogInComponent implements OnInit {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(userData => {
         if (userData.emailVerified) {
+
+          console.log("nieco", userData);
           return this.myFire.getUserFromDatabase(userData.uid);
         } else {
           const message = 'Your email is not yet verified';
@@ -37,6 +39,7 @@ export class LogInComponent implements OnInit {
         }
       })
       .then(userDataFromDatabase => {
+        console.log("nieco", userDataFromDatabase);
         if (userDataFromDatabase) {
           this.notifier.display("success", "Successfully logged in.");
           this.userService.set(userDataFromDatabase);

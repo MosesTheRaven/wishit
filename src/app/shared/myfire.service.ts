@@ -21,6 +21,12 @@ export class MyFireService {
     firebase.database().ref('users/' + uid).update({
       email: email,
     })
+      .then(() => {
+        this.getUserFromDatabase(uid)
+          .then((userDataFromDatabase) => {
+            this.subject.next(userDataFromDatabase.val());
+          })
+      })
 
 
   }
