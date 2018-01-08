@@ -20,6 +20,8 @@ import {UserSettingsComponent} from "./user-settings/user-settings.component";
 import { SettingsUpdatePasswordComponent } from './settings-update-password/settings-update-password.component';
 import { SettingsUpdateEmailComponent } from './settings-update-email/settings-update-email.component';
 import { SettingsUpdateNicknameComponent } from './settings-update-nickname/settings-update-nickname.component';
+import { FriendsAddComponent } from './friends-add/friends-add.component';
+import { FriendsManageComponent } from './friends-manage/friends-manage.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { SettingsUpdateNicknameComponent } from './settings-update-nickname/sett
     UserSettingsComponent,
     SettingsUpdatePasswordComponent,
     SettingsUpdateEmailComponent,
-    SettingsUpdateNicknameComponent
+    SettingsUpdateNicknameComponent,
+    FriendsAddComponent,
+    FriendsManageComponent
   ],
   imports: [
     BrowserModule,

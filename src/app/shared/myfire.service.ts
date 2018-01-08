@@ -27,8 +27,6 @@ export class MyFireService {
             this.subject.next(userDataFromDatabase.val());
           })
       })
-
-
   }
 
    updateUserNickname(uid, nickname, notifier) {
@@ -47,5 +45,30 @@ export class MyFireService {
       .catch((error) => {
         notifier.display("error", error.message);
       });
+  }
+
+  addUserAsFriend(userName, notifier, userService){
+    if(userName == userService.getProfile().nickname) notifier.display("error", "Unable to add self as friend!");
+    else{
+      var query = firebase.database().ref('users');
+      var friendUid;
+      query.once("value") //returns snapshot of all Users
+        .then(function(usersSnapshot) {
+          usersSnapshot.forEach(function(concreteUserSnapshot){
+            if(concreteUserSnapshot.val().nickname == userName) {
+              friendUid = concreteUserSnapshot.val().uid;
+              return true;
+            }
+          })
+          if(friendUid){
+            notifier.display("success", "Such user does exist!");
+
+            firebase.database().ref('users/' + userService.getProfile().uid + '/friends').update({[friendUid]: "pending"})
+          }
+          else notifier.display("error", "Such user does not exist!");
+        })
+
+    }
+
   }
 }

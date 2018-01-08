@@ -11,6 +11,8 @@ import {UserSettingsComponent} from "./user-settings/user-settings.component";
 import {SettingsUpdatePasswordComponent} from "./settings-update-password/settings-update-password.component";
 import {SettingsUpdateEmailComponent} from "./settings-update-email/settings-update-email.component";
 import {SettingsUpdateNicknameComponent} from "./settings-update-nickname/settings-update-nickname.component";
+import {FriendsManageComponent} from "./friends-manage/friends-manage.component";
+import {FriendsAddComponent} from "./friends-add/friends-add.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,6 +25,8 @@ const appRoutes: Routes = [
   {path: 'settings-update-password', component: SettingsUpdatePasswordComponent},
   {path: 'settings-update-email', component: SettingsUpdateEmailComponent},
   {path: 'settings-update-nickname', component: SettingsUpdateNicknameComponent},
+  {path: 'friends-add', component: FriendsAddComponent},
+  {path: 'friends-manage', component: FriendsManageComponent},
 
 ];
 
