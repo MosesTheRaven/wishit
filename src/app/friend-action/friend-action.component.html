@@ -1,9 +1,20 @@
-<div class="well">
-  <span class="lead">
-    {{friendData.name}}
-  </span>
-  <span> is </span>
-  <span >
-    {{friendData.status}}
-  </span>
+<div class="well col-sm-12">
+  <div class="col-sm-4">
+    <span class="lead">
+      {{friendData.name}}
+    </span>
+  </div>
+  <div class="col-sm-4">
+    <span>
+      is {{friendData.status}}
+    </span>
+  </div>
+  <div class="col-sm-4">
+    <div class="btn-group">
+      <button type="button" class="btn btn-success" *ngIf="!acceptedFriend" (click)="confirmUser()">Confirm</button>
+      <button type="button" class="btn btn-warning" *ngIf="!acceptedFriend" (click)="removeUserFromFriends()">Reject</button>
+      <button type="button" class="btn btn-danger" *ngIf="acceptedFriend" (click)="removeUserFromFriends()">Remove</button>
+    </div>
+  </div>
+
 </div>

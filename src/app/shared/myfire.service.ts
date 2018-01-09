@@ -62,7 +62,7 @@ export class MyFireService {
           if(friendUid){
             notifier.display("success", "Such user does exist!");
 
-            firebase.database().ref('users/' + userService.getProfile().uid + '/friends').update({[friendUid]: "pending"})
+            firebase.database().ref('users/' + friendUid+ '/friends').update({[userService.getProfile().uid ]: "pending"})
           }
           else notifier.display("error", "Such user does not exist!");
         })
@@ -73,5 +73,18 @@ export class MyFireService {
 
   getUserFriends(uid){
     return firebase.database().ref('users/' + uid + '/friends');
+  }
+
+  confirmUser(friendUid, myUid){
+    firebase.database().ref('users/' + myUid + '/friends/').update({[friendUid] : "accepted"})
+      .then(()=>{
+        return firebase.database().ref('users/' + friendUid + '/friends/').update({[myUid] : "accepted"});
+      })
+  }
+  removeUserFromFriends(friendUid, myUid){
+    firebase.database().ref('users/' + friendUid + '/friends/' + myUid).remove()
+      .then(()=>{
+        return firebase.database().ref('users/' + myUid + '/friends/' + friendUid).remove();
+      })
   }
 }
