@@ -16,7 +16,6 @@ export class MyFireService {
     return ref.once('value');
   }
 
-
   updateUserEmail(uid, email){
     firebase.database().ref('users/' + uid).update({
       email: email,
@@ -70,5 +69,9 @@ export class MyFireService {
 
     }
 
+  }
+
+  getUserFriends(uid){
+    return firebase.database().ref('users/' + uid + '/friends');
   }
 }

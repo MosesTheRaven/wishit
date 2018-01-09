@@ -22,6 +22,7 @@ import { SettingsUpdateEmailComponent } from './settings-update-email/settings-u
 import { SettingsUpdateNicknameComponent } from './settings-update-nickname/settings-update-nickname.component';
 import { FriendsAddComponent } from './friends-add/friends-add.component';
 import { FriendsManageComponent } from './friends-manage/friends-manage.component';
+import { FriendActionComponent } from './friend-action/friend-action.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FriendsManageComponent } from './friends-manage/friends-manage.componen
     SettingsUpdateEmailComponent,
     SettingsUpdateNicknameComponent,
     FriendsAddComponent,
-    FriendsManageComponent
+    FriendsManageComponent,
+    FriendActionComponent
   ],
   imports: [
     BrowserModule,
