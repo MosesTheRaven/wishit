@@ -23,6 +23,7 @@ import { SettingsUpdateNicknameComponent } from './settings-update-nickname/sett
 import { FriendsAddComponent } from './friends-add/friends-add.component';
 import { FriendsManageComponent } from './friends-manage/friends-manage.component';
 import { FriendActionComponent } from './friend-action/friend-action.component';
+import {FriendResolveService} from "./shared/friendResolve";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { FriendActionComponent } from './friend-action/friend-action.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [RouteGuard, NotificationService, MyFireService, UserService],
+  providers: [RouteGuard, NotificationService, MyFireService, UserService, FriendResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

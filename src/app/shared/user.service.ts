@@ -1,5 +1,6 @@
 
-import {EventEmitter} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
+@Injectable()
 export class UserService{
 
   statusChange : any = new EventEmitter<any>();

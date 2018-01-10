@@ -1,6 +1,8 @@
 import * as firebase from 'firebase';
 import {Subject, Observable} from "rxjs";
+import {Injectable} from "@angular/core";
 
+@Injectable()
 export class MyFireService {
 
   private subject = new Subject<any>();
@@ -49,6 +51,7 @@ export class MyFireService {
   addUserAsFriend(userName, notifier, userService){
     if(userName == userService.getProfile().nickname) notifier.display("error", "Unable to add self as friend!");
     else{
+
       var query = firebase.database().ref('users');
       var friendUid;
       query.once("value") //returns snapshot of all Users
@@ -60,9 +63,20 @@ export class MyFireService {
             }
           })
           if(friendUid){
-            notifier.display("success", "Such user does exist!");
 
-            firebase.database().ref('users/' + friendUid+ '/friends').update({[userService.getProfile().uid ]: "pending"})
+
+            firebase.database().ref('users/' + friendUid+ '/friends/' + userService.getProfile().uid).once('value')
+              .then((data) => {
+
+                if(data.val()) {
+                  notifier.display("error", "User already added as friend or awaiting for friendship confirmation!");
+                }
+                else{
+                  notifier.display("success", "Friend request sent. Awaiting confirmation!");
+                  firebase.database().ref('users/' + friendUid+ '/friends').update({[userService.getProfile().uid ]: "pending"});
+                }
+              });
+
           }
           else notifier.display("error", "Such user does not exist!");
         })

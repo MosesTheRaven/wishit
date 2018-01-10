@@ -28,23 +28,27 @@ export class FriendActionComponent implements OnInit {
   }
   confirmUser(){
     this.myFire.confirmUser(this.friend.key, this.userService.getProfile().uid);
+      /*
+      .then(()=>{
 
-      /*.then(()=>{
         this.notifier.display("success", "Successfully confirmed friendship");
       })
       .catch((error)=>{
         this.notifier.display("error", error.message);
-      })*/
+      })
+      */
   }
 
   removeUserFromFriends(){
     this.myFire.removeUserFromFriends(this.friend.key, this.userService.getProfile().uid);
-    
-      /*.then(()=>{
+
+    /*
+      .then(()=>{
         this.notifier.display("success", "Successfully removed friend");
       })
       .catch((error)=>{
         this.notifier.display("error", error.message);
-      })*/
+      })
+      */
   }
 }
