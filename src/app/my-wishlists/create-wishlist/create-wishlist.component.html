@@ -1,0 +1,41 @@
+<div class="jumbotron text-center">
+  <h2>My Wishlists</h2>
+</div>
+
+<div>
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+    <nav class="navbar navbar-inverse" >
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li routerLinkActive="active"><a routerLink="/my-wishlists/create-wishlist">Create Wishlist</a></li>
+          <li routerLinkActive="active"><a routerLink="/friends-manage">Manage Wishlists</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-4">
+      <h3>Create a wishlist</h3>
+      <form (ngSubmit)="createWishlist(f)" #f="ngForm">
+
+        <div class="form-group">
+          <label for="wishlistName">Wishlist name:</label>
+          <input type="text" name="wishlistName" id="wishlistName" ngModel class="form-control" required>
+          <label for="expDate">Expiration date:</label>
+          <input type="date" name="expDate" id="expDate" ngModel="data.StartDate" class="form-control" min="{{today}}" required>
+          <p>Expiration date must be a future date {{today}}</p>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Create Wishlist</button>
+      </form>
+    </div>
+    <div class="col-sm-5"></div>
+  </div>
+</div>

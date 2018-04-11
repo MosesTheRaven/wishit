@@ -24,6 +24,7 @@ import { FriendsAddComponent } from './friends-add/friends-add.component';
 import { FriendsManageComponent } from './friends-manage/friends-manage.component';
 import { FriendActionComponent } from './friend-action/friend-action.component';
 import {FriendResolveService} from "./shared/friendResolve";
+import { CreateWishlistComponent } from './my-wishlists/create-wishlist/create-wishlist.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {FriendResolveService} from "./shared/friendResolve";
     SettingsUpdateNicknameComponent,
     FriendsAddComponent,
     FriendsManageComponent,
-    FriendActionComponent
+    FriendActionComponent,
+    CreateWishlistComponent
   ],
   imports: [
     BrowserModule,

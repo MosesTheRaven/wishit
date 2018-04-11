@@ -101,4 +101,7 @@ export class MyFireService {
         return firebase.database().ref('users/' + myUid + '/friends/' + friendUid).remove();
       })
   }
+  createWishlist(wishlist){
+
+  }
 }
