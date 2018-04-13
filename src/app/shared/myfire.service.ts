@@ -88,6 +88,9 @@ export class MyFireService {
   getUserFriends(uid){
     return firebase.database().ref('users/' + uid + '/friends');
   }
+  getWishlistItems(wid){
+    return firebase.database().ref('wishlists/' + wid + '/items');
+  }
 
   confirmUser(friendUid, myUid){
     firebase.database().ref('users/' + myUid + '/friends/').update({[friendUid] : "accepted"})
@@ -100,8 +103,5 @@ export class MyFireService {
       .then(()=>{
         return firebase.database().ref('users/' + myUid + '/friends/' + friendUid).remove();
       })
-  }
-  createWishlist(wishlist){
-
   }
 }

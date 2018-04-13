@@ -11,7 +11,6 @@ import {FriendResolveService} from "../shared/friendResolve";
 })
 export class FriendsManageComponent implements OnInit {
   friendsList: any = [];
-  friendData : any = {};
 
   constructor(private myFire : MyFireService, private userService : UserService, private friendResolveService : FriendResolveService) { }
 

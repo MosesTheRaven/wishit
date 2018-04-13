@@ -25,6 +25,8 @@ import { FriendsManageComponent } from './friends-manage/friends-manage.componen
 import { FriendActionComponent } from './friend-action/friend-action.component';
 import {FriendResolveService} from "./shared/friendResolve";
 import { CreateWishlistComponent } from './my-wishlists/create-wishlist/create-wishlist.component';
+import {ThingsResolveService} from "./shared/thingReslove";
+import { ItemsListComponent } from './app/my-wishlists/items-list/items-list.component';
 
 @NgModule({
   declarations: [
@@ -44,14 +46,15 @@ import { CreateWishlistComponent } from './my-wishlists/create-wishlist/create-w
     FriendsAddComponent,
     FriendsManageComponent,
     FriendActionComponent,
-    CreateWishlistComponent
+    CreateWishlistComponent,
+    ItemsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [RouteGuard, NotificationService, MyFireService, UserService, FriendResolveService],
+  providers: [RouteGuard, NotificationService, MyFireService, UserService, FriendResolveService, ThingsResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

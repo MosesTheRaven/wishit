@@ -11,7 +11,6 @@ export class FriendResolveService{
 
 
   friendResolve(){
-    console.log("nieco");
     let friendsList : any = [];
 
     const uid = this.userService.getProfile().uid;

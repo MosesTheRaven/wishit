@@ -18,24 +18,45 @@
   <div class="col-sm-4">
   </div>
 </div>
+
 <div class="container">
-  <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-4">
-      <h3>Create a wishlist</h3>
+  <div *ngIf="ifCreating(status)" class="row">
+    <div class="col-sm-8">
       <form (ngSubmit)="createWishlist(f)" #f="ngForm">
-
-        <div class="form-group">
-          <label for="wishlistName">Wishlist name:</label>
-          <input type="text" name="wishlistName" id="wishlistName" ngModel class="form-control" required>
-          <label for="expDate">Expiration date:</label>
-          <input type="date" name="expDate" id="expDate" ngModel="data.StartDate" class="form-control" min="{{today}}" required>
-          <p>Expiration date must be a future date {{today}}</p>
-
-        </div>
+        <fieldset>
+          <div class="form-group well">
+            <legend>Create a wishlist</legend>
+            <label for="wishlistName">Wishlist name:</label>
+            <input type="text" name="wishlistName" id="wishlistName" ngModel class="form-control" required>
+            <label for="expDate">Expiration date:</label>
+            <input type="date" name="expDate" id="expDate" ngModel="data.StartDate" class="form-control" min="{{today}}" required>
+          </div>
+        </fieldset>
         <button type="submit" class="btn btn-primary">Create Wishlist</button>
       </form>
     </div>
-    <div class="col-sm-5"></div>
+  </div>
+  <div *ngIf="ifEditing(status)" class="row">
+    <div class="col-sm-6">
+      <h3>Add items to your wishlist: {{setWishlistName}}</h3>
+      <form (ngSubmit)="addItem(f)" #f="ngForm">
+        <fieldset>
+          <div class="form-group well">
+            <legend>Add an item</legend>
+            <label for="itemName">Item name</label>
+            <input type="text" name="itemName" id="itemName" ngModel class="form-control" required>
+            <label for="itemDescription">Item description</label>
+            <textarea name="itemDescription" id="itemDescription" ngModel class="form-control" required></textarea>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Add item</button>
+      </form>
+    </div>
+    <div class="col-sm-6">
+      <h2>Already added things</h2>
+      <div class="well col-sm-12" *ngFor="let item of itemsList">
+        <p>{{item.itemName}}</p>
+      </div>
+    </div>
   </div>
 </div>
