@@ -5,8 +5,9 @@ import {MyFireService} from "../../shared/myfire.service";
 import {UserService} from "../../shared/user.service";
 import {NotificationService} from "../../shared/notification.service";
 import {ThingsResolveService} from "../../shared/thingReslove";
+import {FriendResolveService} from "../../shared/friendResolve";
 
-export enum wishlistStatus{
+export enum WishlistStatus{
   Creating,
   Editing,
   Sharing
@@ -21,35 +22,33 @@ export enum wishlistStatus{
 export class CreateWishlistComponent implements OnInit {
 
   today: string = "";
-  status: wishlistStatus;
+  status: WishlistStatus;
   wishlistId: any;
   setWishlistName: string = "";
   itemsList : any = [];
+  friendsList : any = [];
+  sharedWithList: any = [];
 
   constructor(private myFire : MyFireService,
               private userService : UserService,
               private notificationService : NotificationService,
-              private thingsResolveService : ThingsResolveService) {
-    this.today = (new Date()).toISOString().substring(0,10);
-    this.status = wishlistStatus.Creating;
-    this.itemsList
-    /*
-    this.today = date.getFullYear().toString() + "-";
-    if (date.getMonth()+1 < 10) this.today += "0";
-    this.today += (date.getMonth()+1).toString() + "-";
+              private thingsResolveService : ThingsResolveService,
+              private friendResolveService : FriendResolveService) {
 
-    if (date.getDate() < 10) this.today += "0";
-    this.today += date.getDate().toString();
-    */
+    this.today = (new Date()).toISOString().substring(0,10);
+    this.status = WishlistStatus.Creating;
+
+    this.friendsList = this.friendResolveService.friendResolve();
+
   }
   ifCreating(status){
-    return status == wishlistStatus.Creating;
+    return status == WishlistStatus.Creating;
   }
   ifEditing(status){
-    return status == wishlistStatus.Editing;
+    return status == WishlistStatus.Editing;
   }
   ifSharing(status){
-    return status == wishlistStatus.Sharing;
+    return status == WishlistStatus.Sharing;
   }
   ngOnInit() {
 
@@ -79,7 +78,7 @@ export class CreateWishlistComponent implements OnInit {
       firebase.database().ref("users/" + uid + "/wishlists/").update({[wishlistKey.key] : true})
         .then(() => {
           this.notificationService.display("success", "Wishlist successfully added");
-          this.fillItems(wishlist);
+          this.changeStatus(wishlist);
         })
         .catch((error) => {this.notificationService.display("error", error.message())});
 
@@ -94,18 +93,56 @@ export class CreateWishlistComponent implements OnInit {
     }
   }
 
-  fillItems(wishlist){
-    this.status = wishlistStatus.Editing;
+  changeStatus(wishlist){
+    this.status = WishlistStatus.Editing;
     this.setWishlistName = wishlist.wishlistName;
-    this.itemsList = this.thingsResolveService.itemsResolve(wishlist);
   }
-  addItem(form: NgForm){
-    console.log(form.value.itemDescription);
-    firebase.database().ref('wishlists/' + this.wishlistId + '/items/')
-      .update({
-        "itemName" : form.value.itemName,
-        "itemDescription" : form.value.itemDescription,
-        "status" : "not yet reserved"
+  addItem(form: NgForm) {
+
+    let item = {
+      itemName: form.value.itemName,
+      itemDescription: form.value.itemDescription,
+      status: "not yet reserved",
+    };
+
+    let itemKey = firebase.database().ref('wishlists/' + this.wishlistId + '/items')
+      .push(item);
+
+
+    let editedItem = {
+      itemName: item.itemName,
+      itemDescription: item.itemDescription,
+      status: item.status,
+      key: itemKey.key,
+    }
+
+    this.itemsList.push(editedItem);
+  }
+  removeItemFromItemsList(item){
+    firebase.database().ref('wishlists/' + this.wishlistId + '/items').child(item.key).remove()
+      .then(() => {
+        let index = this.itemsList.indexOf(item);
+        this.itemsList.splice(index, 1);
       })
+  }
+  setSharing(){
+    this.status = WishlistStatus.Sharing;
+  }
+  addFriend(friend){
+    console.log("add", friend);
+    this.sharedWithList.push(friend);
+    firebase.database().ref('wishlists/' + this.wishlistId + '/friends/').update({[friend.id] : true,})
+    let index = this.friendsList.indexOf(friend);
+    this.friendsList.splice(index, 1);
+
+  }
+  deleteFriend(friend){
+    console.log("delete", friend);
+    let index = this.sharedWithList.indexOf(friend);
+    this.sharedWithList.splice(index, 1);
+
+    firebase.database().ref('wishlists/' + this.wishlistId + '/friends/' + friend.id).remove();
+
+    this.friendsList.push(friend);
   }
 }

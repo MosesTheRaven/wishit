@@ -38,7 +38,7 @@
   </div>
   <div *ngIf="ifEditing(status)" class="row">
     <div class="col-sm-6">
-      <h3>Add items to your wishlist: {{setWishlistName}}</h3>
+      <h2>Add items to your wishlist: {{setWishlistName}}</h2>
       <form (ngSubmit)="addItem(f)" #f="ngForm">
         <fieldset>
           <div class="form-group well">
@@ -49,14 +49,55 @@
             <textarea name="itemDescription" id="itemDescription" ngModel class="form-control" required></textarea>
           </div>
         </fieldset>
-        <button type="submit" class="btn btn-primary">Add item</button>
+        <button type="submit" class="btn btn-primary btn-lg">Add item</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="setSharing()">Continue to sharing options</button>
       </form>
     </div>
     <div class="col-sm-6">
       <h2>Already added things</h2>
-      <div class="well col-sm-12" *ngFor="let item of itemsList">
-        <p>{{item.itemName}}</p>
+      <div class="well row" *ngFor="let item of itemsList">
+        <div class="well col-sm-9">
+          <span class="lead">{{item.itemName}}</span>
+        </div>
+        <div class="col-sm-3">
+          <button type="button" class="btn btn-danger btn-lg" style="{width: 100%; height: 100%}" (click)="removeItemFromItemsList(item)">Remove</button>
+        </div>
+        <div class="well col-sm-12">
+          <span>{{item.itemDescription}}</span>
+        </div>
       </div>
     </div>
   </div>
+  <div *ngIf="ifSharing(status)" class="row">
+    <div class="col-sm-5 pull-left">
+      <h2>Select people to share your wishlists with</h2>
+    </div>
+    <div class="col-sm-5 pull-right">
+      <h2>Sharing with</h2>
+    </div>
+  </div>
+
+  <div *ngIf="ifSharing(status)" class="row col-sm-5 pull-left">
+    <div class="well row " *ngFor="let friend of friendsList">
+      <div class="well col-sm-9">
+        {{friend.nickname}}
+      </div>
+      <div class="col-sm-3">
+        <button class="btn btn-primary btn-success btn-lg" (click)="addFriend(friend)">Add</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="ifSharing(status)" class="col-sm-2"></div>
+
+  <div *ngIf="ifSharing(status)" class="row col-sm-5 pull-right">
+    <div class="well row" *ngFor="let friend of sharedWithList">
+      <div class="well col-sm-9">
+        <span class="lead">{{friend.nickname}}</span>
+      </div>
+      <div class="col-sm-3">
+        <button type="button" class="btn btn-danger btn-lg" style="{width: 100%; height: 100%}" (click)="deleteFriend(friend)">Remove</button>
+      </div>
+    </div>
+  </div>
+
 </div>

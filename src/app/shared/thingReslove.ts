@@ -10,7 +10,7 @@ export class ThingsResolveService{
 
   itemsResolve(wishlist){
     let itemsResolved: any = [];
-
+    console.log("changeStatus");
     this.myFire.getWishlistItems(wishlist.id)
       .on('child_added', data => {
           console.log(data.val());
