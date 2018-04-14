@@ -39,7 +39,6 @@ export class LogInComponent implements OnInit {
         }
       })
       .then(userDataFromDatabase => {
-        console.log("nieco", userDataFromDatabase);
         if (userDataFromDatabase) {
           this.notifier.display("success", "Successfully logged in.");
           this.userService.set(userDataFromDatabase);

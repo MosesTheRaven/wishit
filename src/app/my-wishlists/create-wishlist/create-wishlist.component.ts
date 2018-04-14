@@ -98,25 +98,28 @@ export class CreateWishlistComponent implements OnInit {
     this.setWishlistName = wishlist.wishlistName;
   }
   addItem(form: NgForm) {
-
-    let item = {
-      itemName: form.value.itemName,
-      itemDescription: form.value.itemDescription,
-      status: "not yet reserved",
-    };
-
-    let itemKey = firebase.database().ref('wishlists/' + this.wishlistId + '/items')
-      .push(item);
-
-
-    let editedItem = {
-      itemName: item.itemName,
-      itemDescription: item.itemDescription,
-      status: item.status,
-      key: itemKey.key,
+    if(form.value.itemName == "" || form.value.itemDescription == ""){
+      this.notificationService.display("error", "Item information not sufficient enough! Fill in item information to continue");
     }
+    else {
+      let item = {
+        itemName: form.value.itemName,
+        itemDescription: form.value.itemDescription,
+        status: "not yet reserved",
+      };
 
-    this.itemsList.push(editedItem);
+      let itemKey = firebase.database().ref('wishlists/' + this.wishlistId + '/items')
+        .push(item);
+
+
+      let editedItem = {
+        itemName: item.itemName,
+        itemDescription: item.itemDescription,
+        status: item.status,
+        key: itemKey.key,
+      }
+      this.itemsList.push(editedItem);
+    }
   }
   removeItemFromItemsList(item){
     firebase.database().ref('wishlists/' + this.wishlistId + '/items').child(item.key).remove()
@@ -126,7 +129,11 @@ export class CreateWishlistComponent implements OnInit {
       })
   }
   setSharing(){
-    this.status = WishlistStatus.Sharing;
+    if(this.itemsList.length != 0){
+      this.status = WishlistStatus.Sharing;
+    }
+    else this.notificationService.display("error", "There are no items added! Add an item to continue!");
+
   }
   addFriend(friend){
     console.log("add", friend);
@@ -134,7 +141,6 @@ export class CreateWishlistComponent implements OnInit {
     firebase.database().ref('wishlists/' + this.wishlistId + '/friends/').update({[friend.id] : true,})
     let index = this.friendsList.indexOf(friend);
     this.friendsList.splice(index, 1);
-
   }
   deleteFriend(friend){
     console.log("delete", friend);
