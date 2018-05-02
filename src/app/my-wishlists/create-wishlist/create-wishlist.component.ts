@@ -60,7 +60,7 @@ export class CreateWishlistComponent implements OnInit {
         Number(form.value.expDate.toString().substring(0,4)),
         Number(form.value.expDate.toString().substring(5,7) -1),
         Number(form.value.expDate.toString().substring(8,10)));
-    if (wishlistDate > today && form.value.wishlistnam != "" ){
+    if (wishlistDate > today && form.value.wishlistName != "" ){
       let uid = this.userService.getProfile().uid;
       let wishlist = {
         "expDate" : form.value.expDate,
@@ -119,6 +119,9 @@ export class CreateWishlistComponent implements OnInit {
         key: itemKey.key,
       }
       this.itemsList.push(editedItem);
+      form.value.itemName = "";
+      form.value.itemDescription = "";
+
     }
   }
   removeItemFromItemsList(item){
@@ -136,19 +139,30 @@ export class CreateWishlistComponent implements OnInit {
 
   }
   addFriend(friend){
-    console.log("add", friend);
     this.sharedWithList.push(friend);
     firebase.database().ref('wishlists/' + this.wishlistId + '/friends/').update({[friend.id] : true,})
-    let index = this.friendsList.indexOf(friend);
-    this.friendsList.splice(index, 1);
+      .then(()=>{
+        firebase.database().ref('users/' + friend.id + '/shared/')
+          .update({[this.wishlistId] : true,})
+          .then(()=>{
+            let index = this.friendsList.indexOf(friend);
+            this.friendsList.splice(index, 1);
+          })
+      })
+
   }
   deleteFriend(friend){
-    console.log("delete", friend);
     let index = this.sharedWithList.indexOf(friend);
     this.sharedWithList.splice(index, 1);
 
-    firebase.database().ref('wishlists/' + this.wishlistId + '/friends/' + friend.id).remove();
-
-    this.friendsList.push(friend);
+    firebase.database().ref('wishlists/' + this.wishlistId + '/friends/' + friend.id)
+      .remove()
+      .then(()=>{
+        firebase.database().ref('users/' + friend.id + '/shared/' + this.wishlistId)
+          .remove()
+          .then(()=>{
+            this.friendsList.push(friend);
+          })
+      });
   }
 }

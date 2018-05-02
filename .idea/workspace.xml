@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="005961f9-54b8-4ff9-b89b-6995dd3cda7d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.firebaserc" beforeDir="false" afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/log-in/log-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/log-in/log-in.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/friends-add/friends-add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/friends-add/friends-add.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/friends-manage/friends-manage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/friends-manage/friends-manage.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/friends/friends.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/friends/friends.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/log-out/log-out.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/log-out/log-out.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/log-out/log-out.component.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/my-wishlists/my-wishlists.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/my-wishlists/my-wishlists.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -30,23 +29,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create-wishlist.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.ts">
+      <file leaf-file-name="create-wishlist.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1462">
-              <caret line="27" column="11" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="544">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-wishlist.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.html">
+      <file leaf-file-name="create-wishlist.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+            <state relative-caret-position="127">
+              <caret line="146" column="8" selection-start-line="145" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,8 +53,8 @@
       <file leaf-file-name="manage-wishlists.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="493">
+              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -63,11 +62,17 @@
       <file leaf-file-name="manage-wishlists.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="433">
+              <caret line="169" column="29" lean-forward="true" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myfire.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/myfire.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1564">
+              <caret line="94" column="2" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -80,6 +85,13 @@
         <option value="TypeScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>remove</find>
+      <find>conso</find>
+      <find>consol</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -97,7 +109,6 @@
         <option value="$PROJECT_DIR$/src/app/shared/notification.service.ts" />
         <option value="$PROJECT_DIR$/src/app/notification/notification.component.html" />
         <option value="$PROJECT_DIR$/src/app/notification/notification.component.ts" />
-        <option value="$PROJECT_DIR$/firebase.json" />
         <option value="$PROJECT_DIR$/src/app/auth/log-in/log-in.component.html" />
         <option value="$PROJECT_DIR$/src/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/src/app/header/header.component.html" />
@@ -130,12 +141,14 @@
         <option value="$PROJECT_DIR$/src/app/friends/friends.component.html" />
         <option value="$PROJECT_DIR$/src/app/friends-add/friends-add.component.html" />
         <option value="$PROJECT_DIR$/src/app/friends-manage/friends-manage.component.html" />
-        <option value="$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.html" />
         <option value="$PROJECT_DIR$/src/app/my-wishlists/my-wishlists.component.html" />
         <option value="$PROJECT_DIR$/src/app/auth/log-in/log-in.component.ts" />
+        <option value="$PROJECT_DIR$/firebase.json" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.html" />
+        <option value="$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.ts" />
         <option value="$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.ts" />
       </list>
     </option>
@@ -153,8 +166,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1620" />
-    <option name="height" value="920" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -162,9 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,22 +210,17 @@
               <item name="my-wishlists" type="462c0819:PsiDirectoryNode" />
               <item name="create-wishlist" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="wishit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wishit" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="my-wishlists" type="462c0819:PsiDirectoryNode" />
-              <item name="manage-wishlists" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="localStorage&#9;null&#9;null&#10;myFire&#9;FILE&#9;file://C:/Users/david/Documents/GitHub/wishit/src/app/shared/myfire.service.ts&#10;nieco&#9;null&#9;null&#10;myfire&#9;FILE&#9;file://C:/Users/Work/wishit/src/app/shared/myfire.service.ts&#10;firebase&#9;null&#9;null&#10;boots&#9;FILE&#9;file://C:/Users/Work/wishit/node_modules/bootstrap/dist/css/bootstrap.css&#10;bootst&#9;FILE&#9;file://C:/Users/Work/wishit/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <property name="SearchEverywhereHistoryKey" value=".remove&#9;null&#9;null&#10;fire&#9;FILE&#9;file://C:/Users/david/Documents/GitHub/wishit/src/app/shared/myfire.service.ts&#10;localStorage&#9;null&#9;null&#10;myFire&#9;FILE&#9;file://C:/Users/david/Documents/GitHub/wishit/src/app/shared/myfire.service.ts&#10;nieco&#9;null&#9;null&#10;myfire&#9;FILE&#9;file://C:/Users/Work/wishit/src/app/shared/myfire.service.ts&#10;firebase&#9;null&#9;null&#10;boots&#9;FILE&#9;file://C:/Users/Work/wishit/node_modules/bootstrap/dist/css/bootstrap.css&#10;bootst&#9;FILE&#9;file://C:/Users/Work/wishit/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.accepted" value="true" />
@@ -704,7 +711,18 @@
       <workItem from="1523445640821" duration="7217000" />
       <workItem from="1523454555915" duration="17172000" />
       <workItem from="1523618265118" duration="27706000" />
-      <workItem from="1523729301999" duration="14004000" />
+      <workItem from="1523729301999" duration="14163000" />
+      <workItem from="1523787332404" duration="3025000" />
+      <workItem from="1523791001620" duration="1778000" />
+      <workItem from="1523799830747" duration="43000" />
+      <workItem from="1523860234852" duration="702000" />
+      <workItem from="1524039184434" duration="11836000" />
+      <workItem from="1524471575338" duration="4139000" />
+      <workItem from="1524565881145" duration="8023000" />
+      <workItem from="1524583620662" duration="10006000" />
+      <workItem from="1524739999301" duration="4119000" />
+      <workItem from="1525201344561" duration="2967000" />
+      <workItem from="1525263935781" duration="2983000" />
     </task>
     <task id="LOCAL-00001" summary="first commit&#10;">
       <created>1508699032542</created>
@@ -825,11 +843,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523650430540</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="creating wishlist is completed&#10;started with managing friends &#10;  - trying to correctly pass wishlists into a list to be shown">
+      <created>1523743695196</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1523743695196</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180886000" />
+    <option name="totallyTimeSpent" value="230666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -854,11 +879,11 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33676094" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.27249357" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32936078" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49434572" visible="true" weight="0.29177377" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49434572" visible="true" weight="0.27892032" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -930,7 +955,8 @@
     <MESSAGE value="added creating wishlists&#10;- so far it only create an instance of a wishlist in wishlists, copies its id to the user's wishlists" />
     <MESSAGE value="changed creating wishlist&#10;adding is being worked on" />
     <MESSAGE value="creating wishlist is finished&#10;todo: a save option for moving to publishing and editing wishlists" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating wishlist is finished&#10;todo: a save option for moving to publishing and editing wishlists" />
+    <MESSAGE value="creating wishlist is completed&#10;started with managing friends &#10;  - trying to correctly pass wishlists into a list to be shown" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating wishlist is completed&#10;started with managing friends &#10;  - trying to correctly pass wishlists into a list to be shown" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -942,17 +968,31 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/firebase.json">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="119">
+          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-space/user-space.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="272">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -987,13 +1027,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <entry file="file://$PROJECT_DIR$/.angular-cli.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/notification/notification.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1034,9 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1097,16 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/friends-add/friends-add.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/header/header.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1122,23 +1142,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/items-lists/items-lists.component.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/thingReslove.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,9 +1155,6 @@
           <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/friends/friends.component.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1173,34 +1177,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/myfire.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="100" column="2" selection-start-line="100" selection-start-column="2" selection-end-line="100" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <element signature="n#!!block;n#updateUserNickname#0;n#MyFireService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/my-wishlists.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/friendResolve.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding>
-            <element signature="e#2#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1225,16 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/friends-manage/friends-manage.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/auth/log-in/log-in.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1242,37 +1212,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.ts">
+    <entry file="file://$PROJECT_DIR$/firebase.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1462">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.angular-cli.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/friends-add/friends-add.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/friends-manage/friends-manage.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+        <state relative-caret-position="544">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="493">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/myfire.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="94" column="2" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/create-wishlist/create-wishlist.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="146" column="8" selection-start-line="145" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/my-wishlists/manage-wishlists/manage-wishlists.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="433">
+          <caret line="169" column="29" lean-forward="true" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
         </state>
       </provider>
     </entry>
