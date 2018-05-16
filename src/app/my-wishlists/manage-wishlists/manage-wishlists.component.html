@@ -26,12 +26,13 @@
       <p><b>Expires at:</b> {{wishlist.data.expDate}}</p>
       <p><b>Items:</b> zobrazia sa itemy</p>
       <p><b>Shared with:</b> zobrazia sa ludia, s ktorymi sa zdiela</p>
-      <p><b>Expires at:</b> {{wishlist.data.status}}</p>
+      <p><b>Status:</b> {{wishlist.data.status}}</p>
     </div>
     <div class="btn-group pull-right">
-      <button class="btn btn-lg btn-danger" (click)="removeWishlist(wishlist)">Remove</button>
-      <button class="btn btn-lg btn-warning" (click)="editWishlist(wishlist)">Edit</button>
-      <button class="btn btn-lg btn-success" (click)="publishWishlist(wishlist)">Publish</button>
+      <span *ngIf="wishlist.data.status == 'published'" class="badge danger">You can't edit a published wishlist</span>
+      <button *ngIf="wishlist.data.status != 'published'" class="btn btn-lg btn-danger" (click)="removeWishlist(wishlist)">Remove</button>
+      <button *ngIf="wishlist.data.status != 'published'" class="btn btn-lg btn-warning" (click)="editWishlist(wishlist)">Edit</button>
+      <button *ngIf="wishlist.data.status != 'published'" class="btn btn-lg btn-success" (click)="publishWishlist(wishlist)">Publish</button>
     </div>
   </div>
 </div>

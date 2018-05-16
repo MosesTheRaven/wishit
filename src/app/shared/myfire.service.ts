@@ -72,8 +72,15 @@ export class MyFireService {
                   notifier.display("error", "User already added as friend or awaiting for friendship confirmation!");
                 }
                 else{
-                  notifier.display("success", "Friend request sent. Awaiting confirmation!");
-                  firebase.database().ref('users/' + friendUid+ '/friends').update({[userService.getProfile().uid ]: "pending"});
+                  firebase.database().ref('users/' + friendUid+ '/friends')
+                    .update({[userService.getProfile().uid ]: "pending"})
+                    .then(()=>{
+                      firebase.database().ref('users/' + friendUid+ '/notifications')
+                        .push({'type' : 'New friend request!', 'uid' : userService.getProfile().uid})
+                        .then(()=>{
+                          notifier.display("success", "Friend request sent. Awaiting confirmation!");
+                        })
+                    });
                 }
               });
 
@@ -93,11 +100,16 @@ export class MyFireService {
   }
 
   confirmUser(friendUid, myUid){
-    firebase.database().ref('users/' + myUid + '/friends/').update({[friendUid] : "accepted"})
+    firebase.database().ref('users/' + friendUid + '/notifications/')
+      .push({'type' : 'A friend accepted your request!', 'uid' : myUid})
       .then(()=>{
-        return firebase.database().ref('users/' + friendUid + '/friends/').update({[myUid] : "accepted"});
-      })
+        firebase.database().ref('users/' + myUid + '/friends/').update({[friendUid] : "accepted"})
+          .then(()=>{
+            return firebase.database().ref('users/' + friendUid + '/friends/').update({[myUid] : "accepted"});
+          })
+      });
   }
+
   removeUserFromFriends(friendUid, myUid){
     firebase.database().ref('users/' + friendUid + '/friends/' + myUid).remove()
       .then(()=>{

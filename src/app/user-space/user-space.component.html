@@ -1,3 +1,37 @@
-<p>
-  user-space works!
-</p>
+<div class="jumbotron text-center">
+  <h2 *ngIf="isWishlistOpened()">{{openedWishlist.data.wishlistName}}</h2>
+  <h2 *ngIf="!isWishlistOpened()">UserSpace</h2>
+</div>
+<div *ngIf="!isWishlistOpened()">
+  <div  class="container" *ngFor="let wishlist of wishlistsList" >
+    <div class="row well bg-info" >
+      <div class="col-sm-9">
+        <h2>{{wishlist.data.wishlistName}}</h2>
+        <h4>shared with you by <b>{{wishlist.userName}}</b></h4>
+        <p>wishlist expires on <b>{{wishlist.data.expDate}}</b></p>
+      </div>
+      <div class="col-sm-3">
+        <button class="btn btn-lg btn-primary" (click)="openWishlist(wishlist)" >Open</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="isWishlistOpened()">
+  <div class="col-sm-2"></div>
+  <div class="row container col-sm-8">
+    <div class="well row" *ngFor="let item of openedWishlist.data.items">
+      <div class="col-sm-12">
+        <h3>{{item.value.itemName}}</h3>
+        <p>{{item.value.itemDescription}}</p>
+      </div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-6 btn-group">
+        <button *ngIf="item.value.status == 'reserved'" class="btn btn-danger" (click)="removeReservation(item)">Remove Reservation</button>
+        <button *ngIf="item.value.status == 'not yet reserved'" class="btn btn-primary" (click)="reserveItem(item)">Reserve</button>
+        <button *ngIf="item.value.status == 'reserved'" class="btn btn-success" (click)="confirmReservation(item)">Confirm Reservation</button>
+        <span *ngIf="item.value.status == 'bought'" class="badge badge-light">This items has already been bought!</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2"></div>
+</div>

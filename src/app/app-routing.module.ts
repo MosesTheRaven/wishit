@@ -15,6 +15,7 @@ import {FriendsManageComponent} from "./friends-manage/friends-manage.component"
 import {FriendsAddComponent} from "./friends-add/friends-add.component";
 import {CreateWishlistComponent} from "./my-wishlists/create-wishlist/create-wishlist.component";
 import {ManageWishlistsComponent} from "./my-wishlists/manage-wishlists/manage-wishlists.component";
+import {NotificationsComponent} from "./notifications/notifications.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
   {path: 'friends-add', component: FriendsAddComponent},
   {path: 'friends-manage', component: FriendsManageComponent},
   {path: 'my-wishlists/create-wishlist', component: CreateWishlistComponent},
-  {path: 'my-wishlists/manage-wishlists', component: ManageWishlistsComponent}
+  {path: 'my-wishlists/manage-wishlists', component: ManageWishlistsComponent},
+  {path: 'notifications', component: NotificationsComponent}
 
 
 ];

@@ -21,10 +21,12 @@
 
 <div class="row">
   <div class="col-lg-12">
-
     <div class="col-lg-3">
     </div>
-    <div class="well col-lg-6">
+    <div *ngIf="friendsList.length == 0" class="well col-lg-6">
+      <span>No friend actions to show</span>
+    </div>
+    <div *ngIf="friendsList.length != 0" class="well col-lg-6">
       <div class="well col-sm-12" *ngFor="let friend of friendsList">
         <div class="col-sm-4">
         <span class="lead">

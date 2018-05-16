@@ -1,0 +1,25 @@
+<div class="jumbotron text-center">
+  <h2>Notifications</h2>
+</div>
+
+<div class="container">
+  <div class="col-sm-12">
+    <div class="col-sm-10"></div>
+    <div class="col-sm-2">
+      <button class="btn btn-danger" *ngIf="notificationList.length != 0" (click)="removeNotifications()">Remove all notifications</button>
+    </div>
+  </div>
+  <div class="row col-sm-12">
+    <div class="col-sm-offset-2" *ngFor="let notification of notificationList">
+      <div>
+      <span>
+        {{notification.type}}
+      </span>
+        <a *ngIf="notification.type=='A friend shared a wishlist with you'" routerLink='/user-space'>Check notification here</a>
+        <a *ngIf="notification.type=='New friend request!' || notification.type=='A friend accepted your request!'" routerLink='/friends-manage'>Check notification here</a>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+</div>

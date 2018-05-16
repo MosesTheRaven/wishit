@@ -27,8 +27,6 @@ export class ManageWishlistsComponent implements OnInit {
 
   constructor(private userService : UserService, private notificationService : NotificationService, private myFireService : MyFireService) {
     this.today = (new Date()).toISOString().substring(0,10);
-
-
   }
 
   ngOnInit() {
@@ -196,7 +194,17 @@ export class ManageWishlistsComponent implements OnInit {
   }
   publishWishlist(wishlist){
     firebase.database().ref('wishlists/' + wishlist.id)
-      .update({'status' : 'published'});
-    this.ngOnInit();
+      .update({'status' : 'published'})
+      .then(()=>{
+        firebase.database().ref('wishlists/' + wishlist.id + '/friends/')
+          .on('child_added', (friend)=>{
+            firebase.database().ref('users/' + friend.key + '/notifications/')
+              .push({'type' : 'A friend shared a wishlist with you', 'uid' : wishlist.id})
+              .then(()=>{
+                this.ngOnInit();
+              })
+            console.log(friend.key);
+          })
+    });
   }
 }

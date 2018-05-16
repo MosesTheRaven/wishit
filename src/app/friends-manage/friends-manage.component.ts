@@ -46,6 +46,7 @@ export class FriendsManageComponent implements OnInit {
      this.notifier.display("error", error.message);
      })
      */
+      this.ngOnInit();
   }
 }
 

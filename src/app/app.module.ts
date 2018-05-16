@@ -27,6 +27,7 @@ import {FriendResolveService} from "./shared/friendResolve";
 import { CreateWishlistComponent } from './my-wishlists/create-wishlist/create-wishlist.component';
 import {ThingsResolveService} from "./shared/thingReslove";
 import { ManageWishlistsComponent } from './my-wishlists/manage-wishlists/manage-wishlists.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ManageWishlistsComponent } from './my-wishlists/manage-wishlists/manage
     FriendActionComponent,
     CreateWishlistComponent,
     ManageWishlistsComponent,
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,

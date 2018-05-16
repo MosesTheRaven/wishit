@@ -4,7 +4,6 @@
       <a class="navbar-brand" href="#">WishIt</a>
     </div>
     <ul class="nav navbar-nav">
-      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"  ><a routerLink="/">Home</a></li>
       <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/user-space">User Space</a></li>
       <li routerLinkActive="active" *ngIf="isLoggedIn"><a  routerLink="/my-wishlists">My Wishlists</a></li>
       <li routerLinkActive="active" *ngIf="isLoggedIn"><a routerLink="/friends">Friends</a></li>
@@ -12,7 +11,13 @@
     <ul class="nav navbar-nav navbar-right">
 <li routerLinkActive="active" *ngIf="!isLoggedIn"><a  routerLink="/sign-in">Sign Up</a></li>
       <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
-
+      <li routerLinkActive="active" *ngIf="isLoggedIn">
+        <a routerLink="/notifications">
+          <div class="btn btn-sm btn-primary">Notifications
+            <span class="badge badge-light">{{notificationList.length}}</span>
+          </div>
+        </a>
+      </li>
       <li class="dropdown" *ngIf="isLoggedIn">
         <a class="dropdown-toggle" data-toggle="dropdown" href="javascript: void(0)"><span class="user-name-display">{{nickname}}</span>
           <span class="caret"></span></a>

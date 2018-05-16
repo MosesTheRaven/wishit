@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy{
   email: string = "";
   userDataUpdateSubscription: Subscription;
   loginSubscription: Subscription;
+  notificationList : any = [];
 
 
   constructor(private userService : UserService, private myFireService: MyFireService
@@ -46,6 +47,10 @@ export class HeaderComponent implements OnInit, OnDestroy{
         this.uid = user.uid;
         this.isLoggedIn = true;
 
+        firebase.database().ref('users/' + user.uid + '/notifications/')
+          .on('child_added', (notification)=>{
+            this.notificationList.push(notification.val());
+          })
       } else{
         this.nickname = "";
         this.email = "";
@@ -61,6 +66,11 @@ export class HeaderComponent implements OnInit, OnDestroy{
           this.email = user.email;
           this.uid = user.uid;
           this.isLoggedIn = true;
+
+          firebase.database().ref('users/' + user.uid + '/notifications/')
+            .on('child_added', (notification)=> {
+              this.notificationList.push(notification.val());
+            })
         }
       }
       else{
